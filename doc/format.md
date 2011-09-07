@@ -35,14 +35,15 @@ Various sources for the document-id:
  * Using an random-id (like the couchdb-uuid)
  * Using an upstream-id like the Maildir-id or IMAP-uid
  * Building an own id by different header fields
+ * Using an hash value of the full message or full header
 
 In the demo-application we would like to use the message-id or/and
 the upstream-id as a source to an sha1. Do we need something like
 merging a secret for this too?
 
 
-Keyspace
---------
+Root Keyspace
+-------------
 
     '_id': '' /* Document ID need some rethinking */
     'type': 'couchmail/email'
@@ -56,6 +57,27 @@ Keyspace
         'plain': '' /* plain text version of the e-mail rendered
                        at import time */
     }
+
+meta Keyspace
+-------------
+
+We are not sure how to handle header fields right now (what to store
+and how to serialize etc.) as long this is not clear we store some
+of this important fields in the meta keyspace.
+These include:
+ 
+ * From ["",""]
+ * To [["",""]…]
+ * CC [["",""]…]
+ * Sender ""
+ * Date ""?
+ * Subject ""
+ * Delivered-to [""]
+ * References/in-reply-to ? 
+
+Design decisions:
+We use arrays and arrays of arrays to store From, To, CC, etc to find
+a good balance of usability and storage.
 
 
 Handling header fields
