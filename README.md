@@ -28,9 +28,20 @@ Basic goals
  * Basic statistic tools
  * Basic mail accessing JS library
  * Being a platform for experiments
+ * Experiment with `_id` handling
  * Experiment with threading
  * Experiment with data mining and content linking
 
+
+Dependencies
+------------
+
+Beside that this may subject to rapid changes I want to keep
+the dependency list up to date.
+
+ * Python 2.6
+ * couchdb
+ 
 
 Mail import
 -----------
