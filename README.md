@@ -15,8 +15,8 @@ for playing with mails in couchdb.
 Status
 ------
 
-This project is an experiment. This document is an draft and may
-but not must act as an implementation guide or an idea pool.
+This project is an experiment. This document is an draft and may act
+as an implementation guide or an idea pool.
 
 
 Basic goals
